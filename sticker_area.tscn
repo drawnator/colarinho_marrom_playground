@@ -1,0 +1,118 @@
+[gd_scene load_steps=18 format=3 uid="uid://b7uvmjlri1ud0"]
+
+[ext_resource type="Script" path="res://sticker_area.gd" id="1_d55a6"]
+[ext_resource type="Shader" path="res://border.gdshader" id="1_xxnwl"]
+[ext_resource type="Texture2D" uid="uid://dn6due4qx3t8g" path="res://Sticky-Notes-PNG-File.png" id="2_ki6of"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fh7nt"]
+shader = ExtResource("1_xxnwl")
+shader_parameter/outline_width = 2.0
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh8wk"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(34, 0, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elkg4"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(323, 0, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk1ah"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(612, 0, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55io1"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(901, 0, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0rrc"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(34, 277, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jflqm"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(323, 277, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4upj"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(612, 277, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57fs8"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(901, 277, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vidq"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(34, 554, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wste3"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(323, 554, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6tfx"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(612, 554, 289, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtvwb"]
+atlas = ExtResource("2_ki6of")
+region = Rect2(901, 554, 289, 277)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iq0j5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh8wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elkg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk1ah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55io1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0rrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jflqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4upj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57fs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vidq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wste3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6tfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtvwb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="sticker_area" type="Area2D"]
+script = ExtResource("1_d55a6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_fh7nt")
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_iq0j5")
+
+[node name="photo_1_colision" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, -1.5)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(114, 131, -94, 125, -92, -35, -108, -51, -90, -69, -90, -83, -72.24, -83.8992, -58, -97, -42, -83, 70.2359, -78.7912, 74, -93, 140, -75, 134, -51, 118, -55)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://kfpyndohysur"]
+
+[ext_resource type="Script" path="res://mouse.gd" id="1_qhdb6"]
+
+[node name="mouse" type="Node2D"]
+script = ExtResource("1_qhdb6")
+
+[node name="hand" type="Polygon2D" parent="."]
+position = Vector2(2.38419e-07, 11)
+rotation = -0.389105
+scale = Vector2(1, 0.974359)
+color = Color(1, 1, 0.607843, 1)
+polygon = PackedVector2Array(14.7114, 17.2829, -4.57103, 35.7904, 3.02509, 60.0623, 11.3523, 63.5664, 27.3407, 61.4204, 43.6345, 44.9829, 37, 21, 15, 22, 9, 41, 20, 45, 28, 29, 20, 49, 5, 40, 14, 21, 32, 21, 8, -13, 1.94311, -10.2747)

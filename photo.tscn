@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2wwt546cu2pv"]
+
+[ext_resource type="Texture2D" uid="uid://dyemj2skrhb54" path="res://Screen_Shot_2021-01-11_at_1.12.06_PM.webp" id="1_o6lkw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_degx2"]
+atlas = ExtResource("1_o6lkw")
+region = Rect2(26, 0, 170, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y6gg"]
+atlas = ExtResource("1_o6lkw")
+region = Rect2(297, 0, 170, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n0yv"]
+atlas = ExtResource("1_o6lkw")
+region = Rect2(26, 170, 170, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ffex"]
+atlas = ExtResource("1_o6lkw")
+region = Rect2(297, 170, 170, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwefa"]
+atlas = ExtResource("1_o6lkw")
+region = Rect2(26, 340, 170, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15wts"]
+atlas = ExtResource("1_o6lkw")
+region = Rect2(297, 340, 170, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lflhc"]
+atlas = ExtResource("1_o6lkw")
+region = Rect2(26, 510, 170, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ythlr"]
+atlas = ExtResource("1_o6lkw")
+region = Rect2(297, 510, 170, 170)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w1qme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_degx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y6gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n0yv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ffex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwefa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15wts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lflhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ythlr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="photo" type="AnimatedSprite2D"]
+position = Vector2(104.5, 105.5)
+scale = Vector2(1.24118, 1.24118)
+sprite_frames = SubResource("SpriteFrames_w1qme")
+frame = 3
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="0_colision" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+polygon = PackedVector2Array(-84.1943, 5.23697, -71.3033, -2.81991, -61.6351, -3.6256, -57.6066, -8.45972, -24.5735, -18.9336, 21.3507, -19.7393, 28.6019, -23.7678, 42.2986, -17.3223, 42.2986, -17.3223, 72.9147, -10.0711, 85.8057, -7.65403, 85, 39.0758, 68.8863, 33.436, 60.0237, 39.8815, 32.6303, 44.7156, 29.4076, 55.1896, 18.128, 61.6351, 11.6825, 46.327, -23.7678, 46.327, -44.7156, 37.4645, -53.5782, 38.2701, -55.1896, 32.6303, -65.6635, 28.6019, -80.9716, 18.9336, -85, 13.2938, -85, 9.2654, -84.1943, 8.45972)
+
+[node name="1_colision" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+polygon = PackedVector2Array(39.0758, 33.436, 35.8531, 29.4076, 35.8531, 17.3223, 42.2986, 6.84834, 43.91, -5.23697, 43.91, -16.5166, 48.7441, -20.545, 49.5498, -26.1848, 45.5213, -31.8246, 55.9953, -39.8815, 59.218, -45.5213, 59.218, -55.1896, 55.9953, -46.327, 51.9668, -56.8009, 51.9668, -43.1043, 47.9384, -43.91, 39.8815, -34.2417, 37.4645, -34.2417, 32.6303, -39.8815, 31.8246, -49.5498, 34.2417, -52.7725, 41.4929, -59.218, 32.6303, -54.3839, 30.2133, -55.9953, 27.7962, -61.6351, 26.9905, -47.9384, 22.1564, -46.327, 24.5735, -37.4645, 29.4076, -27.7962, 29.4076, -22.9621, 29.4076, -18.9336, 23.7678, -11.6825, 18.9336, -6.84834, 10.8768, -3.6256, 8.45972, 2.01421, 2.01421, 6.84834, -2.01422, 14.0995, -3.6256, 22.9621, -2.01422, 35.0474)
+
+[node name="2_colision" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+polygon = PackedVector2Array(-10.0711, 65.6635, -13.2938, 58.4123, -13.2938, 44.7156, -17.3223, 32.6303, -14.9052, 14.9052, -10.8768, 4.43127, -9.2654, -9.2654, -6.84834, -20.545, -5.23697, -39.8815, -2.01422, -51.1611, -6.84834, -56.8009, -10.8768, -49.5498, -18.9336, -66.4692, -31.8246, -74.5261, -31.8246, -68.8863, -43.91, -71.3033, -48.7441, -68.8863, -57.6066, -78.5545, -66.4692, -69.6919, -65.6635, -57.6066, -73.7204, -42.2986, -74.5261, -35.8531, -85, -32.6303, -85, 84.1943, -10.8768, 85)
+
+[node name="3_colision" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+polygon = PackedVector2Array(-40.6872, 24.5735, -40.6872, 17.3223, -29.4076, 13.2938, -22.1564, 8.45972, -5.23697, 7.65403, -0.402847, 10.8768, 13.2938, 15.7109, 14.9052, 23.7678, 8.45972, 28.6019, -11.6825, 31.8246, -26.9905, 31.8246)
+
+[node name="border" type="Polygon2D" parent="."]
+position = Vector2(-84.4389, -85.1854)
+scale = Vector2(0.523077, 0.746427)
+invert_enabled = true
+invert_border = 9.6
+polygon = PackedVector2Array(-1.07259, 0.248357, 323.927, 0.248357, 324, 228, -1.07259, 227.248)
+
+[node name="base" type="Polygon2D" parent="border"]
+position = Vector2(-0.774989, 6.80754)
+scale = Vector2(0.995107, 0.960105)
+polygon = PackedVector2Array(-10, 239.778, 336, 240.026, 336, 240.026, 336, 332.942, -10, 332.942)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="border/base"]
+offset_left = 62.2181
+offset_top = 257.002
+offset_right = 169.218
+offset_bottom = 280.002
+scale = Vector2(2, 2)
+bbcode_enabled = true
+text = "[b][u][color=darkred]confidential[/color][/u][/b]"
+metadata/_edit_use_anchors_ = true
